@@ -219,12 +219,10 @@ transform:scale(1.08);
 }
 
 .featured-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-margin-bottom:20px;
 display: flex;
 flex-wrap: wrap;
+gap:40px;
+margin-bottom:20px;
 }
 
 .project-label{
