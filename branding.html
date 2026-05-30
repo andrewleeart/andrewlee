@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Art Gallery - Andrew Lee</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">Andrew Lee</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="branding.html">Branding</a></li>
+            <li><a href="about.html">More About Me</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="art-gallery">
+        <div class="art-header">
+            <h1>Branding & Design</h1>
+            <p>Showcase of my branding projects.</p>
+        </div>
+        <section class="gallery-section">
+            <h2 style="color:#2e8b57;text-shadow:0 2px 8px rgba(46,139,87,0.10);">Grace Golden Skin</h2>
+            <p>Grace Golden Skin is a cosmetic skin business building a unique brand identity and an online presence.</p>
+            <div class="gallery-grid">
+                <div class="art-card">
+                    <img src="images/branding/ggsfrontcard.png" alt="Art 1" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#2e8b57;">GGS FRONT CARD</h4>
+                        <p>Front card business design for the Golden Grace Skin line.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/gracegoldenskinbackcard.png" alt="Art 2" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#2e8b57;">GGS BACK CARD</h4>
+                        <p>Back card business design for the Golden Grace Skin line.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/ggsflyer.png" alt="Art 3" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#2e8b57;">GGS Services Flyer</h4>
+                        <p>Design for the services flyer for the Golden Grace Skin line.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/ggsproducts1.jpeg" alt="Art 4" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#2e8b57;">GGS Product Packaging</h4>
+                        <p>Product packaging design for the Golden Grace Skin line.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/ggsproducts2.jpeg" alt="Art 5" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#2e8b57;">GGS Print Media</h4>
+                        <p>Print media design for the Golden Grace Skin line.</p>
+                    </div>
+                </div>
+        </section>
+        <section class="gallery-section">
+            <h2 style="color:#b57edc;text-shadow:0 2px 8px rgba(181,126,220,0.10);">Kassandra's Lashes</h2>
+            <p>Kassandra's Lashes is a cosmetic brand focused on high-quality, long-lasting eyelashes.</p>
+            <div class="gallery-grid">
+                <div class="art-card">
+                    <img src="images/branding/kassandraslashesfrontcard.png" alt="Art 1" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#b57edc;">Kassandra's Lashes Front Card</h4>
+                        <p>Front card design for Kassandra's Lashes.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/kassandraslashesbackcard.png" alt="Art 2" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#b57edc;">Kassandra's Lashes Back Card</h4>
+                        <p>Back card design for Kassandra's Lashes.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/klproducts1.jpeg" alt="Art 3" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#b57edc;">Kassandra's Lashes Print Media</h4>
+                        <p>Print media design for Kassandra's Lashes.</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <img src="images/branding/klproducts2.jpeg" alt="Art 4" class="gallery-img">
+                    <div class="art-info">
+                        <h4 style="color:#b57edc;">Kassandra's Lashes Product Packaging</h4>
+                        <p>Print media design for Kassandra's Lashes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal for zoom -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+        </div>
+    </div>
+    <script>
+    // Hamburger menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        navToggle.classList.toggle('open');
+    });
+    // Gallery modal zoom
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+    document.querySelectorAll('.gallery-img').forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+        });
+    });
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+    </script>
+</body>
+</html>
